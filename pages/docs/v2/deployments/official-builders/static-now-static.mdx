@@ -64,6 +64,22 @@ To also serve `index.html`, you'll want to add a `@now/static` build:
 
 You can see the resulting deployment in action here: <https://builds-deployment-2d7eouze2.now.sh>
 
+You can also publish a subfolder of your project folder statically. Let's say you have your built output in a subfolder called `public`. You can pubish it using:
+
+```json
+{
+  "version": 2,
+  "builds": [
+    { "src": "./public/**", "use": "@now/static" }
+  ],
+  "routes": [
+    { "src": "/(.*)", "dest": "public/$1" }
+  ]
+}
+```
+
+The `routes` entry above is required in order to ensure all requests are handled using the contents of the published subfolder. The [Routes documentation](https://zeit.co/docs/v2/deployments/routes/) has more information on routing configuration.
+
 ## Technical Details
 
 ### Entrypoint
