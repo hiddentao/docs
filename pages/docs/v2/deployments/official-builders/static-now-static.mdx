@@ -70,7 +70,7 @@ You can also publish a subfolder of static files and rewrite the route to appear
 {
   "version": 2,
   "builds": [
-    { "src": "./public/**", "use": "@now/static" }
+    { "src": "public/**", "use": "@now/static" }
   ],
   "routes": [
     { "src": "/(.*)", "dest": "public/$1" }
@@ -78,7 +78,7 @@ You can also publish a subfolder of static files and rewrite the route to appear
 }
 ```
 
-The `routes` entry above is required in order to ensure all requests are handled using the contents of the published subfolder. The [Routes documentation](https://zeit.co/docs/v2/deployments/routes/) has more information on routing configuration.
+Without the `routes` entry above, the static CSS files would be located at `/public/style.css` instead of the expected`/style.css`. This route rewrite above uses a regular express to capture wildcard path and route to the matching file inside the `public` directory. The [Routes documentation](/docs/v2/deployments/routes) has more information on routing configuration.
 
 ## Technical Details
 
