@@ -78,7 +78,7 @@ You can also publish a subfolder of static files and rewrite the route to appear
 }
 ```
 
-Without the `routes` entry above, the static CSS files would be located at `/public/style.css` instead of the expected`/style.css`. This route rewrite above uses a regular express to capture wildcard path and route to the matching file inside the `public` directory. The [Routes documentation](/docs/v2/deployments/routes) has more information on routing configuration.
+Without the `routes` entry above, the static CSS files would be located at `/public/style.css` instead of the expected `/style.css`. The route rewrite above uses a regular expression to capture wildcard paths and route them to the matching file inside the `public` directory. The [Routes documentation](/docs/v2/deployments/routes) has more information on routing configuration.
 
 ## Technical Details
 
