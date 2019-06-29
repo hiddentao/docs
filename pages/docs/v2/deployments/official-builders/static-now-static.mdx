@@ -64,7 +64,7 @@ To also serve `index.html`, you'll want to add a `@now/static` build:
 
 You can see the resulting deployment in action here: <https://builds-deployment-2d7eouze2.now.sh>
 
-You can also publish a subfolder of static files and rewrite the route to appear at the root of the deployment. For example, a static folder called `public` might contain several CSS files. Use the following to deploy the `public` folder contents recursively:
+You can also publish a subfolder of static files and have it appear at the root of the deployment. For example, a static folder called `public` might contain several CSS files. Use the following to deploy its contents recursively:
 
 ```json
 {
@@ -78,7 +78,7 @@ You can also publish a subfolder of static files and rewrite the route to appear
 }
 ```
 
-Without the `routes` entry above, the static CSS files would be located at `/public/style.css` instead of the expected `/style.css`. The route rewrite above uses a regular expression to capture wildcard paths and route them to the matching file inside the `public` directory. The [Routes documentation](/docs/v2/deployments/routes) has more information on routing configuration.
+Without the `routes` entry above, the static CSS files would be located at `/public/*.css` instead of the expected `/*.css`. The route rewrite above uses a regular expression to capture wildcard paths and route them to the matching file inside the `public` directory. The [Routes documentation](/docs/v2/deployments/routes) has more information on routing configuration.
 
 ## Technical Details
 
